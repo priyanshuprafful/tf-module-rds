@@ -10,3 +10,7 @@ variable "database_name" {
 variable "backup_retention_period" {}
 
 variable "preferred_backup_window" {}
+
+variable "no_of_instances" {}
+
+variable "instance_class" {}

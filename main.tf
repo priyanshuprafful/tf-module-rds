@@ -15,7 +15,13 @@ resource "aws_rds_cluster" "rds_cluster" {
     { Name = "${var.env}-rds"}
   )
 }
+resource "aws_rds_cluster_instance" "cluster_instances" {
+  count              = var.no_of_instances
+  identifier         = "${var.env}-rds-${count.index}"
+  cluster_identifier = aws_rds_cluster.rds_cluster.id
+  instance_class     = var.instance_class
 
+}
 
 resource "aws_db_subnet_group" "subnet_group" {
   name = "${var.env}-db"
