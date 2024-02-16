@@ -1,4 +1,4 @@
-resource "aws_rds_cluster" "rdscluster" {
+resource "aws_rds_cluster" "main" {
   cluster_identifier      = "${var.env}-rds"
   engine                  = var.engine
   engine_version          = var.engine_version
