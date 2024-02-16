@@ -20,6 +20,8 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
   identifier         = "${var.env}-rds-${count.index}"
   cluster_identifier = aws_rds_cluster.rds_cluster.id
   instance_class     = var.instance_class
+  engine                  = var.engine
+  engine_version          = var.engine_version
 
 }
 
