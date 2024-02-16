@@ -11,6 +11,7 @@ resource "aws_rds_cluster" "rds_cluster" {
   preferred_backup_window = var.preferred_backup_window
   db_subnet_group_name = aws_db_subnet_group.subnet_group.name
   skip_final_snapshot = true
+  final_snapshot_identifier = true 
   tags = merge(
     var.tags ,
     { Name = "${var.env}-rds"}
@@ -23,6 +24,7 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
   instance_class     = var.instance_class
   engine                  = var.engine
   engine_version          = var.engine_version
+
 
 
 }
