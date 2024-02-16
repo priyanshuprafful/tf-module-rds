@@ -4,7 +4,7 @@ variable "tags" {}
 variable "engine" {}
 variable "engine_version" {}
 variable "database_name" {
-  default = " dummy mysql db "
+  default = "dummy"
 }
 
 variable "backup_retention_period" {}
