@@ -14,3 +14,5 @@ variable "preferred_backup_window" {}
 variable "no_of_instances" {}
 
 variable "instance_class" {}
+variable "vpc_id" {}
+variable "allow_subnets" {}
