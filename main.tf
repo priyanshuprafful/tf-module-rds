@@ -9,9 +9,9 @@ resource "aws_rds_cluster" "rds_cluster" {
   master_password         = data.aws_ssm_parameter.pass.value
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
-  db_subnet_group_name = aws_db_subnet_group.subnet_group.name
+  db_subnet_group_name    = aws_db_subnet_group.subnet_group.name
   vpc_security_group_ids = [aws_security_group.main.id]
-#  skip_final_snapshot = true
+  skip_final_snapshot = true
 #  final_snapshot_identifier = true
   tags = merge(
     var.tags ,
